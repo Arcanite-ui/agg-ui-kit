@@ -1,0 +1,34 @@
+.btn,
+.btn-lg,
+.btn-sm,
+.btn-xs {
+  @apply font-medium text-sm inline-flex items-center justify-center border border-transparent rounded leading-5 shadow-sm transition duration-150 ease-in-out;
+}
+
+.btn {
+  @apply px-3 py-2 bg-indigo-500 hover:bg-indigo-600 text-white cursor-pointer;
+
+  &.success {
+    @apply bg-emerald-500 hover:bg-emerald-600 text-white;
+  }
+
+  &.danger {
+    @apply bg-rose-500 hover:bg-rose-600 text-white;
+  }
+
+  &.disabled {
+    @apply disabled:border-slate-200 disabled:bg-slate-100 disabled:text-slate-400 disabled:cursor-not-allowed shadow-none;
+  }
+}
+
+.btn-lg {
+  @apply px-4 py-3;
+}
+
+.btn-sm {
+  @apply px-2 py-1;
+}
+
+.btn-xs {
+  @apply px-2 py-0.5;
+}
