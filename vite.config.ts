@@ -2,15 +2,15 @@ import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 import {fileURLToPath, URL} from "node:url";
-import typescript from '@rollup/plugin-typescript';
 import dts from 'vite-plugin-dts'
+import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
   build: {
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'mosaic-ui',
-      fileName: (format) => `mosaic-ui.${format}.js`,
+      fileName: (format) => `ui.${format}.js`,
     },
     rollupOptions: {
       external: ['vue'],
@@ -19,18 +19,14 @@ export default defineConfig({
           vue: path.resolve('./node_modules/vue'),
         }
       },
+      plugins: [
+        visualizer(),
+      ]
     },
   },
   plugins: [
-    // {
-    //   ...typescript(),
-      // apply: 'build',
-      // declaration: true,
-      // declarationDir: 'types/',
-      // rootDir: 'src/'
-    // },
     vue(),
-    dts()
+    dts(),
   ],
   resolve: {
     alias: {
