@@ -4,8 +4,7 @@
 .form-select,
 .form-checkbox,
 .form-radio {
-
-    &:focus {
-        @apply ring-0;
-    }
+	&:focus {
+		@apply ring-0;
+	}
 }

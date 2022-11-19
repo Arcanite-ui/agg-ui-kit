@@ -1,50 +1,76 @@
 {
-  "name": "ui-kit",
-  "version": "0.0.5",
-  "main": "./dist/mosaic-ui.umd.js",
-  "module": "./dist/mosaic-ui.es.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
-  "sideEffects": [
-    "*.sass",
-    "*.scss",
-    "*.css"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.20.2",
-    "@rollup/plugin-typescript": "^9.0.2",
-    "@storybook/addon-actions": "^6.5.13",
-    "@storybook/addon-essentials": "^6.5.13",
-    "@storybook/addon-interactions": "^6.5.13",
-    "@storybook/addon-links": "^6.5.13",
-    "@storybook/builder-vite": "^0.2.5",
-    "@storybook/testing-library": "^0.0.13",
-    "@storybook/vue3": "^6.5.13",
-    "@types/node": "^18.11.9",
-    "@vitejs/plugin-vue": "^3.2.0",
-    "autoprefixer": "^10.4.13",
-    "babel-loader": "^8.3.0",
-    "postcss": "^8.4.19",
-    "rollup-plugin-visualizer": "^5.8.3",
-    "sass": "^1.56.1",
-    "tailwindcss": "^3.2.4",
-    "typescript": "^4.9.3",
-    "vite": "^3.2.3",
-    "vite-plugin-dts": "^1.7.1",
-    "vue": "^3.2.41",
-    "vue-loader": "^16.8.3",
-    "vue-tsc": "^1.0.9",
-    "@storybook/addons": "^6.5.13",
-    "lodash.kebabcase": "^4.1.1",
-    "prettier": "^2.7.1"
-  }
+	"name": "ui-kit",
+	"version": "0.0.5",
+	"main": "./dist/ui.umd.js",
+	"module": "./dist/ui.es.js",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"sideEffects": [
+		"*.sass",
+		"*.scss",
+		"*.css"
+	],
+	"scripts": {
+		"dev": "vite",
+		"build": "vue-tsc --noEmit && vite build",
+		"preview": "vite preview",
+		"storybook": "start-storybook -p 6006",
+		"build-storybook": "build-storybook",
+		"lint": "yarn lint:js && yarn lint:prettier",
+		"lint:js": "eslint --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore .",
+		"lint:prettier": "prettier --check .",
+		"lint:fix": "prettier --write --list-different . && yarn lint:js --fix",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
+			"prettier --check --ignore-unknown",
+			"eslint --cache"
+		]
+	},
+	"devDependencies": {
+		"@babel/core": "^7.20.2",
+		"@rollup/plugin-typescript": "^9.0.2",
+		"@rushstack/eslint-patch": "^1.2.0",
+		"@storybook/addon-actions": "^6.5.13",
+		"@storybook/addon-docs": "^6.5.13",
+		"@storybook/addon-essentials": "^6.5.13",
+		"@storybook/addon-interactions": "^6.5.13",
+		"@storybook/addon-links": "^6.5.13",
+		"@storybook/addons": "^6.5.13",
+		"@storybook/builder-vite": "^0.2.5",
+		"@storybook/testing-library": "^0.0.13",
+		"@storybook/vue3": "^6.5.13",
+		"@types/node": "^18.11.9",
+		"@typescript-eslint/eslint-plugin": "^5.43.0",
+		"@typescript-eslint/parser": "^5.43.0",
+		"@vitejs/plugin-vue": "^3.2.0",
+		"@vue/eslint-config-typescript": "^11.0.2",
+		"autoprefixer": "^10.4.13",
+		"babel-loader": "^8.3.0",
+		"eslint": "^8.28.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-import-resolver-typescript": "^3.5.2",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-storybook": "^0.6.7",
+		"eslint-plugin-vue": "^9.7.0",
+		"husky": "^8.0.2",
+		"lint-staged": "^13.0.3",
+		"lodash.kebabcase": "^4.1.1",
+		"postcss": "^8.4.19",
+		"prettier": "^2.7.1",
+		"rollup-plugin-visualizer": "^5.8.3",
+		"sass": "^1.56.1",
+		"tailwindcss": "^3.2.4",
+		"typescript": "~4.7.4",
+		"vite": "^3.2.3",
+		"vite-plugin-dts": "^1.7.1",
+		"vite-plugin-eslint": "^1.8.1",
+		"vue": "^3.2.41",
+		"vue-loader": "^16.8.3",
+		"vue-tsc": "^1.0.9",
+		"eslint-plugin-import": "^2.26.0"
+	}
 }

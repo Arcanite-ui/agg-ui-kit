@@ -1,5 +1,5 @@
-import Button from "./components/Button/Button.vue"
+import { AButton } from "./components/AButton"
 
-import "./assets/main.scss";
+import "./assets/main.scss"
 
-export {Button}
+export { AButton }
