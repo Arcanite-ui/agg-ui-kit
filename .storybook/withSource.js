@@ -10,7 +10,13 @@ function templateSourceCode(templateSource, args, argTypes, componentTag) {
 
 	for (const [k, t] of Object.entries(argTypes)) {
 		const val = args[k]
-		if (typeof val !== "undefined" && t.table && t.table.category === "props" && val !== t.defaultValue) {
+		if (
+			typeof val !== "undefined" &&
+			t.table &&
+			t.table.category === "props" &&
+			val !== t.defaultValue &&
+			val !== t.table.defaultValue?.summary?.replace(/["']/g, "")
+		) {
 			componentArgs[k] = val
 		}
 
