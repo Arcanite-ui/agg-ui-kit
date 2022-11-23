@@ -22,14 +22,6 @@ module.exports = {
 		sourceType: "module",
 	},
 	plugins: ["vue", "@typescript-eslint", "prettier", "import"],
-	settings: {
-		"import/parsers": {
-			"@typescript-eslint/parser": [".ts", ".tsx", ".vue"],
-		},
-		"import/resolver": {
-			typescript: {},
-		},
-	},
 	rules: {
 		"@typescript-eslint/no-unused-vars": ["error", { args: "all", argsIgnorePattern: "^_" }],
 		"newline-per-chained-call": ["warn"],
