@@ -1,6 +1,6 @@
 {
-	"name": "ui-kit",
-	"version": "0.0.5",
+	"name": "test-test-slid-ui-kit",
+	"version": "0.0.7",
 	"main": "./dist/ui.umd.js",
 	"module": "./dist/ui.es.js",
 	"types": "./dist/index.d.ts",
@@ -13,10 +13,9 @@
 		"*.css"
 	],
 	"scripts": {
-		"dev": "vite",
 		"build": "vue-tsc --noEmit && vite build",
 		"preview": "vite preview",
-		"storybook": "start-storybook -p 6006",
+		"dev": "start-storybook -p 6006",
 		"build-storybook": "build-storybook",
 		"lint": "yarn lint:js && yarn lint:prettier",
 		"lint:js": "eslint --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore .",
