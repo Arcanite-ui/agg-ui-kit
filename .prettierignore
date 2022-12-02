@@ -97,3 +97,6 @@ sw.*
 
 #gitlab ci
 .gitlab-ci.yml
+.github
+storybook-static
+CHANGELOG.md

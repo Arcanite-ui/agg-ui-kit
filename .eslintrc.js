@@ -61,5 +61,7 @@ module.exports = {
 		"dist",
 		"package-lock.json",
 		"yarn.lock",
+		".github",
+		"storybook-static",
 	],
 }

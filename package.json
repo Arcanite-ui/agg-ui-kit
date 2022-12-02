@@ -1,12 +1,16 @@
 {
-	"name": "ui-kit",
-	"version": "0.0.1",
+	"name": "agg-ui-kit",
+	"version": "0.3.1",
 	"main": "./dist/ui.umd.js",
 	"module": "./dist/ui.es.js",
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Arcanite-ui/ui-elements.git"
+	},
 	"sideEffects": [
 		"*.sass",
 		"*.scss",
@@ -25,9 +29,12 @@
 	},
 	"lint-staged": {
 		"*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
-			"prettier --check --ignore-unknown",
+			"prettier --check --ignore-unknown .",
 			"eslint --cache"
 		]
+	},
+	"peerDependencies": {
+		"vue": "^3"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.2",

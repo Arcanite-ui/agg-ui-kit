@@ -12,6 +12,10 @@ module.exports = {
 		storyStoreV7: true,
 	},
 	async viteFinal(config, { configType }) {
+		if (configType === "PRODUCTION") {
+			config.base = "./"
+		}
+
 		return {
 			...config,
 			resolve: {
