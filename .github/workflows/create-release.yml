@@ -10,15 +10,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install and Build
         run: |
-          npm ci
-          npm run build
+          yarn install --frozen-lockfile
+          yarn build
       - name: Create GH Release
         uses: softprops/action-gh-release@v1
         with:
           files: "./dist/*"
       - name: Publish to NPM
-        run: npm publish
+        run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
