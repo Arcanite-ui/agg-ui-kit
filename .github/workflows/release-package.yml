@@ -20,6 +20,10 @@ jobs:
         run: |
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub Actions"
+      - name: Install and Build
+        run: |
+          yarn install --frozen-lockfile
+          yarn build
       - name: Bump release version
         if: startsWith(github.event.inputs.release-type, 'pre') != true
         run: |
@@ -51,10 +55,6 @@ jobs:
           git push origin && git push --tags
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install and Build
-        run: |
-          yarn install --frozen-lockfile
-          yarn build
       - name: Publish to NPM
         run: yarn publish --verbose --access public --tag ${{ env.RELEASE_TAG }}
         env:
@@ -72,10 +72,6 @@ jobs:
           tag_name: ${{ env.NEW_VERSION }}
           body: ${{ steps.get-changelog.outputs.changelog }}
           prerelease: ${{ startsWith(github.event.inputs.release-type, 'pre') }}
-          files: |
-            .vscode
-            dist
-            package.json
-            README.md
+          files: "dist/*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
