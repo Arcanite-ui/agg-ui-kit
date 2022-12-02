@@ -1,5 +1,4 @@
-name: Prepare-Release
-
+name: Create release
 on:
   push:
     tags:
