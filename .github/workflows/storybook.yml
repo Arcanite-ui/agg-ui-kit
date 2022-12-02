@@ -12,8 +12,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Install and Build
         run: |
-          npm ci
-          npm run build-storybook
+          yarn install --frozen-lockfile
+          yarn build-storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
