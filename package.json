@@ -29,7 +29,7 @@
 	},
 	"lint-staged": {
 		"*.{vue,js,jsx,cjs,mjs,ts,tsx,cts,mts}": [
-			"prettier --check --ignore-unknown",
+			"prettier --check --ignore-unknown .",
 			"eslint --cache"
 		]
 	},
