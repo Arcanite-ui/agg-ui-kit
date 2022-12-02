@@ -13,3 +13,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: "./dist/*"
