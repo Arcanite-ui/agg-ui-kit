@@ -1,8 +1,8 @@
 name: Storybook
 on:
   push:
-    branches:
-      - develop
+    tags:
+      - "v*"
 
 jobs:
   build-and-deploy:
