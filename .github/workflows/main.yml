@@ -16,6 +16,6 @@ jobs:
       - name: Install and Build
         run: |
           yarn install --frozen-lockfile
-          yarn build-storybook
+          yarn build
       - name: Lint
         run: yarn lint
