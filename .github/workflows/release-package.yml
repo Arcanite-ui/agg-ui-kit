@@ -72,6 +72,10 @@ jobs:
           tag_name: ${{ env.NEW_VERSION }}
           body: ${{ steps.get-changelog.outputs.changelog }}
           prerelease: ${{ startsWith(github.event.inputs.release-type, 'pre') }}
-          files: ".vscode/*,dist/*,package.json,README.md"
+          files: |
+            .vscode
+            dist
+            package.json
+            README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
