@@ -29,6 +29,9 @@
 			"eslint --cache"
 		]
 	},
+	"peerDependencies": {
+		"vue": "^3"
+	},
 	"devDependencies": {
 		"@babel/core": "^7.20.2",
 		"@rollup/plugin-typescript": "^9.0.2",
