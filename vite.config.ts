@@ -10,8 +10,8 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: path.resolve(__dirname, "src/index.ts"),
-			name: "ui",
-			fileName: (format) => `ui.${format}.js`,
+			name: "agg-ui-kit",
+			fileName: (format) => `agg-ui-kit.${format}.js`,
 		},
 		rollupOptions: {
 			external: ["vue"],

@@ -1,0 +1,113 @@
+.a-input {
+	@apply text-slate-600;
+
+	.inner__container {
+		& > label {
+			@apply block text-sm font-medium mb-1;
+
+			& > .required {
+				@apply text-rose-500;
+			}
+		}
+
+		.input__container {
+			@apply relative flex flex-row bg-white border rounded leading-5 border-slate-200 hover:border-slate-300 shadow-sm placeholder-slate-400;
+
+			&:focus-within {
+				@apply border-indigo-300 hover:border-indigo-300;
+			}
+
+			&.with-prefix {
+				& > input {
+					@apply pl-0;
+				}
+			}
+
+			&.with-suffix {
+				& > input {
+					@apply pr-0;
+				}
+			}
+
+			&.disabled {
+				@apply border-slate-200 bg-slate-100 text-slate-400 cursor-not-allowed;
+			}
+
+			& > input {
+				@apply w-full text-sm rounded;
+
+				&:focus {
+					@apply outline-0 ring-0;
+				}
+
+				&[type="search"]::-webkit-search-decoration,
+				&[type="search"]::-webkit-search-cancel-button,
+				&[type="search"]::-webkit-search-results-button,
+				&[type="search"]::-webkit-search-results-decoration {
+					-webkit-appearance: none;
+				}
+			}
+
+			.prefix__container,
+			.suffix__container {
+				@apply flex items-center pointer-events-none px-3;
+
+				& > :deep(svg) {
+					@apply w-4 h-4 fill-current text-slate-400 shrink;
+				}
+
+				& > span {
+					@apply text-sm text-slate-400 font-medium;
+				}
+			}
+		}
+	}
+
+	.hint-message__container {
+		@apply text-xs mt-1;
+	}
+
+	&.sm {
+		.input__container {
+			& > input {
+				@apply px-2 py-1;
+			}
+		}
+	}
+
+	&.md {
+		.input__container {
+			& > input {
+				@apply py-2 px-3;
+			}
+		}
+	}
+
+	&.lg {
+		.input__container {
+			& > input {
+				@apply px-4 py-3;
+			}
+		}
+	}
+
+	&.error {
+		.input__container {
+			@apply border-rose-300;
+		}
+
+		.hint-message__container {
+			@apply text-rose-500;
+		}
+	}
+
+	&.success {
+		.input__container {
+			@apply border-emerald-300;
+		}
+
+		.hint-message__container {
+			@apply text-emerald-300;
+		}
+	}
+}

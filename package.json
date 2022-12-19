@@ -1,8 +1,8 @@
 {
 	"name": "agg-ui-kit",
 	"version": "0.0.1",
-	"main": "./dist/ui.umd.js",
-	"module": "./dist/ui.es.js",
+	"main": "./dist/agg-ui-kit.umd.js",
+	"module": "./dist/agg-ui-kit.es.js",
 	"types": "./dist/index.d.ts",
 	"files": [
 		"dist"
